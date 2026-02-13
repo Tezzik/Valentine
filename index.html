@@ -88,7 +88,13 @@ button {
     transition: all 0.4s ease;
     z-index: 5;
     pointer-events: none;
-    white-space: nowrap;
+    text-align: center;
+
+    max-height: 70vh;     /* ограничиваем высоту */
+    overflow-y: auto;     /* вертикальная прокрутка */
+    padding: 0 20px;      /* отступы от краёв */
+    box-sizing: border-box;
+    white-space: pre-wrap; /* перенос строк */
 }
 
 .show {
@@ -181,17 +187,20 @@ body.bg-change::after {
 
 /* адаптив для маленьких экранов */
 @media (max-width: 480px) {
+    .message {
+        font-size: 18px;
+        max-height: 65vh;
+        padding: 0 10px;
+    }
     .new-text {
         font-size: 16px;
         padding: 0 8px;
         max-height: 75vh;
     }
-
     button {
         font-size: 18px;
         padding: 20px 30px;
     }
-
     h1 {
         font-size: 24px;
     }
